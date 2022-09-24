@@ -19,7 +19,17 @@ class ViewController: UIViewController {
     private var blueValue: Float = 0
     
     override func viewWillLayoutSubviews() {
-        mainView.backgroundColor = UIColor(red: CGFloat(redValue), green: CGFloat(greenValue), blue: CGFloat(blueValue), alpha: 1)
+        redColorView.text = String(format: "%.2f", redValue)
+        greenColorView.text = String(format: "%.2f", greenValue)
+        blueColorView.text = String(format: "%.2f", blueValue)
+        mainView.layer.cornerRadius = 20
+       
+        mainView.backgroundColor = UIColor(
+            red: CGFloat(redValue),
+            green: CGFloat(greenValue),
+            blue: CGFloat(blueValue),
+            alpha: 1
+        )
     }
 
     @IBAction func redSliderAction(_ sender: UISlider) {
