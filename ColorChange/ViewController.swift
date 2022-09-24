@@ -14,31 +14,35 @@ class ViewController: UIViewController {
     @IBOutlet var greenColorView: UILabel!
     @IBOutlet var blueColorView: UILabel!
     
-    var redValue: CGFloat = 0
-    var greenValue: CGFloat = 0
-    var blueValue: CGFloat = 0
+    private var redValue: Float = 0
+    private var greenValue: Float = 0
+    private var blueValue: Float = 0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        
+    override func viewWillLayoutSubviews() {
+        mainView.backgroundColor = UIColor(red: CGFloat(redValue), green: CGFloat(greenValue), blue: CGFloat(blueValue), alpha: 1)
     }
-    
-   
 
     @IBAction func redSliderAction(_ sender: UISlider) {
         redColorView.text = String(format: "%.2f", sender.value)
-       
         
+        if let input = Float(redColorView.text!) {
+            redValue = input
+        }
     }
     
     @IBAction func greenSliderAction(_ sender: UISlider) {
         greenColorView.text = String(format: "%.2f", sender.value)
         
+        if let input = Float(greenColorView.text!) {
+            greenValue = input
+        }
     }
     
     @IBAction func blueSliderAction(_ sender: UISlider) {
         blueColorView.text = String(format: "%.2f", sender.value)
-
+        
+        if let input = Float(blueColorView.text!) {
+            blueValue = input
+        }
     }
 }
