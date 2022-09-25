@@ -19,9 +19,6 @@ class ViewController: UIViewController {
     private var blueValue: Float = 0
     
     override func viewWillLayoutSubviews() {
-        redColorView.text = String(format: "%.2f", redValue)
-        greenColorView.text = String(format: "%.2f", greenValue)
-        blueColorView.text = String(format: "%.2f", blueValue)
         mainView.layer.cornerRadius = 20
        
         mainView.backgroundColor = UIColor(
