@@ -19,8 +19,6 @@ class ColorisedViewController: UIViewController {
     @IBOutlet var greenSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     
-    @IBOutlet var doneButton: UIButton!
-    
     var delegate: ColorisedViewControllerDelegate!
     
     var setColor: UIColor!
@@ -31,6 +29,10 @@ class ColorisedViewController: UIViewController {
         redSlider.value = Float(setColor.redColor)
         greenSlider.value = Float(setColor.greenColor)
         blueSlider.value = Float(setColor.blueColor)
+        redColorLabel.text = String(format: "%.2f", setColor.redColor)
+        greenColorLabel.text = String(format: "%.2f", setColor.greenColor)
+        blueColorLabel.text = String(format: "%.2f", setColor.blueColor)
+        mainView.backgroundColor = setColor
     }
 
     @IBAction func slidersAction() {
@@ -46,7 +48,6 @@ class ColorisedViewController: UIViewController {
         )
         
         mainView.backgroundColor = setColor
-        
     }
     
     @IBAction func doneButtonAction() {
